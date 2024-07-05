@@ -1,0 +1,46 @@
+#Class{
+    width:100vw;
+    flex-direction:row;
+}
+
+footer{
+    box-shadow: rgba(0, 0, 0, 0.45) 1px 2px 50px 0px inset;
+}
+
+  footer div{
+    font-size:2.5rem;
+    display: flex;
+    justify-content: center;
+    gap:3rem;
+    padding:2.5rem;
+  }
+
+ #discord{
+    transition:all 100ms linear;
+     border-radius:35%;
+     &:hover{
+        background-color: black ;
+      color: #7289da;
+    box-shadow: 0px 0px 30px 10px #8b8b8b;
+  }
+}
+#email{
+    text-align: center;
+    transition:all 100ms linear;
+    border-radius:15%;
+    padding:0 7px 0 7px;
+     &:hover{
+        color:white;
+        background-color: #880808;
+    box-shadow: 0px 0px 30px 10px #8b8b8b;
+  }
+}
+#git{
+    transition:all 100ms linear;
+    border-radius:50%;
+     &:hover{
+        color:white;
+        background-color:black;
+    box-shadow: 0px 0px 30px 10px #8b8b8b;
+  }
+} 

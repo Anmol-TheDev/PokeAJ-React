@@ -1,0 +1,176 @@
+*{
+    margin:0;
+    padding:0;
+
+    
+}
+ 
+#PokeContainer{
+    background-color:#171717;
+    z-index:1;
+    position: relative;
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap: wrap;
+    gap:3rem;
+}
+
+.Card{
+    background-color: rgb(35, 35, 35,0.3);
+    backdrop-filter:blur(20px);
+    border-radius:10%;
+    max-height:290px;
+    
+    transition: all 130ms linear;
+    img{
+        transition: all 130ms linear;
+        width:300px;
+        height:200px;
+        
+    }
+    p{
+        width:2.5rem;
+        text-align:center;
+        color:black;
+        
+        background-color:#ffe62d;
+        border-radius: 12px 12px 46px 12px;
+    }
+    span{
+        text-align: center;
+        display:block;
+        color:black;
+        font-size:20px;
+        padding:3px;
+        width:100px;
+        border-radius:20px;
+        margin-bottom:10px;
+    }
+    h2{
+        text-align: center;
+    }
+    &:hover{
+            cursor:pointer;
+          
+           box-shadow: 0px 0px 30px 10px #8b8b8b;
+           img{
+            scale:1.2;
+           }
+        }
+        #Cardfoot{
+            
+            display: flex;
+            justify-content:space-evenly;
+            gap:2vw;
+            font-weight:600;
+        }
+        
+}
+#ArrowBtn{
+    display: flex;
+    margin-top:1rem;
+    justify-content: center;
+    gap:5rem;
+    font-size:2rem;
+}
+.Header{
+   
+    height:50vh;
+    position: relative;
+    .header2ndChild{
+        
+        display:flex;
+        justify-content:center;
+        align-items: center;
+        flex-wrap:wrap;
+        gap:20vw;
+        height:20vw;
+        
+        h1{
+            font-size:70px;
+        }
+        
+    }
+    &::before{
+        content:'';
+    position: absolute;
+    inset:0;
+    z-index:-1;
+    background-color:rgba(0, 0, 0, 0.359) ;
+    }
+        video{
+            height:100%;
+            width:100%;
+            overflow-x:hidden;
+            top:0;
+            left:0;
+            position: absolute;
+            object-fit:fill;
+            z-index:-2;
+            
+         }
+    
+}
+
+.SideBar{
+    height:40vh;
+    position:absolute;
+    top:-1000px;
+    display:flex;
+    flex-direction: column;
+    gap:2rem;
+    align-items:center;
+    transition:.5s ease;
+    background-color: #171717;
+    box-shadow: rgba(0, 0, 0, 0.45) 1px 2px 50px 0px inset;
+   
+
+   ul{
+    z-index:3;
+        width:50%;
+        height:30vh;
+        padding:0 1rem ;
+        list-style: none;
+        display: flex;
+        justify-content:space-evenly;
+        flex-wrap: wrap;
+        gap:1.5rem;
+    
+   }
+    li:hover{
+        cursor: pointer;
+        text-decoration:underline;
+    }
+
+   
+}
+form{
+    border-radius:10px;
+    background-color:#282828;
+
+    input{
+            
+        width:300px;
+        border:none;
+        background-color: transparent;
+        padding:8px;
+        font-size:17px;
+    }
+    input:focus{
+        outline: none;
+    }
+    .closeBtn{
+        padding-right:30px;
+        border:none;
+        background-color:transparent;
+    }
+    
+}
+ 
+@media  only screen and (max-width :600px) {
+
+    .Header{
+        height:30dvh;
+    }
+   
+}
