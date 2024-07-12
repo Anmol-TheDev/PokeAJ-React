@@ -1,0 +1,126 @@
+.container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    gap:4dvh;
+    color:#cfdfef;
+    h1{
+       text-align:center;
+       font-size: 50px;
+       
+    }
+    user-select: none;
+}
+.images{
+    display: flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:5vw;
+}
+.mainImg{
+    padding:0;
+    img{
+        border-radius:20px;
+       width:400px;
+       box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), -4px -4px 16px rgba(255, 255, 255, 0.05);
+    }
+    
+   }
+.groupedImg{
+    padding:5px;
+    display:flex;
+    flex-direction:column;
+   justify-content:space-evenly;
+   gap:5px;
+    img{
+        width:90px;
+        border-radius:15px;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), -4px -4px 16px rgba(255, 255, 255, 0.05);
+    }
+}
+.bakgroundChnage{
+    background-color:#faece231;
+}
+
+.information{
+
+    display:flex;
+    justify-content:space-evenly;
+    width:100vw;
+    div{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+       flex-direction:column;
+        gap:35px;
+        height:200px;
+        width:30vw;
+        box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), -4px -4px 16px rgba(255, 255, 255, 0.05);
+        border-radius:15px;
+        p{
+            font-size:25px;
+        }
+    }
+    
+}
+
+.skillBarBox{
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width:80%;
+    padding:20px;
+    border-radius:15px;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5), -4px -4px 16px rgba(255, 255, 255, 0.05);
+}
+
+.skillBar{
+    position: relative;
+    width:100%;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+    .skill-bar {
+        display: block;
+        border-radius: 4px;
+        height: 25px;
+        
+            &.level1 { width: 20%; background-color: #6e787d}
+            &.level2 { width: 40%; background-color: #778891}
+            &.level3 { width: 60%; background-color: #718793}
+            &.level4 { width: 80%; background-color: #596f7d}
+            &.level5 { width: 100%; background-color:#526f80}
+    }
+    
+    .skill-name {
+        position: absolute;
+        top: 5px;
+        left: 10px;
+        font-weight: 600;
+    }
+    .skill-percent {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .groupedImg{
+        
+        flex-direction:row;
+        gap:10px;
+    }
+    .mainImg{
+        img{
+           width:350px;}}
+    .information{
+        div{
+            width:auto;
+            min-width:130px;
+            padding:0 10px 0 10px;
+            font-size:20px;
+        }
+    }        
+}
+

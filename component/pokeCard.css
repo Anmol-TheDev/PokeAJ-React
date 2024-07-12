@@ -1,8 +1,6 @@
 *{
     margin:0;
     padding:0;
-
-    
 }
  
 #PokeContainer{
@@ -16,26 +14,26 @@
 }
 
 .Card{
-    background-color: rgb(35, 35, 35,0.3);
-    backdrop-filter:blur(20px);
+    /* background-color: rgb(35, 35, 35,0.3); */
+    background-color: #202020;
     border-radius:10%;
-    max-height:290px;
-    
     transition: all 130ms linear;
+    box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.342), -4px -4px 16px rgba(255, 255, 255, 0.129);
     img{
         transition: all 130ms linear;
         width:300px;
-        height:200px;
-        
+        height:200px; 
     }
+    .idDiv{
+        width:300;
     p{
         width:2.5rem;
         text-align:center;
         color:black;
-        
         background-color:#ffe62d;
         border-radius: 12px 12px 46px 12px;
     }
+}
     span{
         text-align: center;
         display:block;
@@ -47,14 +45,14 @@
         margin-bottom:10px;
     }
     h2{
+        color:#cfdfef;
         text-align: center;
     }
     &:hover{
             cursor:pointer;
-          
-           box-shadow: 0px 0px 30px 10px #8b8b8b;
+           box-shadow: 0px 0px 30px 10px #8b8b8b7c;
            img{
-            scale:1.2;
+            scale:1.25;
            }
         }
         #Cardfoot{
@@ -66,15 +64,21 @@
         }
         
 }
+.Card a{
+    display: flex;
+    flex-direction:column;
+    gap:0.6rem;
+}
 #ArrowBtn{
     display: flex;
     margin-top:1rem;
     justify-content: center;
     gap:5rem;
     font-size:2rem;
+    color:#cfdfef;
 }
 .Header{
-   
+   color: #cfdfef;
     height:50vh;
     position: relative;
     .header2ndChild{
@@ -126,7 +130,6 @@
    
 
    ul{
-    z-index:3;
         width:50%;
         height:30vh;
         padding:0 1rem ;
@@ -140,16 +143,14 @@
     li:hover{
         cursor: pointer;
         text-decoration:underline;
-    }
-
-   
+    } 
 }
 form{
     border-radius:10px;
     background-color:#282828;
 
     input{
-            
+        color:#cfdfef;
         width:300px;
         border:none;
         background-color: transparent;
@@ -160,17 +161,37 @@ form{
         outline: none;
     }
     .closeBtn{
-        padding-right:30px;
+        font-size:18px;
+        color:#cfdfef ;
+        padding-right:10px;
         border:none;
         background-color:transparent;
     }
     
 }
  
-@media  only screen and (max-width :600px) {
-
-    .Header{
-        height:30dvh;
+@media screen and (max-width :600px) {
+    
+    .Card a{
+        display:flex;
+        align-items:center;
+        flex-direction:column;
+        img{
+           width:50vw;
+        }
+       .idDiv{
+        width:80vw;
+       }
     }
-   
+    .SideBar{
+        ul{
+            gap:0.9rem;
+            height:auto;
+            width:85%;
+        }
+        
+    }
+    .Header{
+        height:35dvh;
+    }
 }

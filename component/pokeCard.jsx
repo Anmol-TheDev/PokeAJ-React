@@ -12,7 +12,7 @@ function MainPage() {
   const [display, setDisplay] = useState("none");
   const [sideBar, setSideBar] = useState({});
   const [btnDisplay,setbtnDisplay]= useState({display:'flex'});
-  const [Xbtn,setXbtn] = useState({display:"none"});
+  const [Xbtn,setXbtn] = useState({opacity:'0'});
   //NextButton
   const NestBtn = () => {
     setStartVal(StartVal + 20);
@@ -44,15 +44,16 @@ function MainPage() {
         }
       });
     }
+
     if (EndVal < 21) {
       setDisplay("none");
     } else {
       setDisplay("block");
     }
   }, [poke, StartVal, EndVal]);
-
+console.log(poke)
   const TypeBg = (argu) => {
-    switch (argu) {
+    switch (argu) { 
       case "normal":
         return "#A8A77A";
 
@@ -127,7 +128,7 @@ function MainPage() {
   const filterSearch=(argu)=>{
     if(argu.target.value.length){
       console.log(argu.target.value)
-      setXbtn("block")
+      setXbtn({opacity:'1'})
       setPkData([]);
       poke.forEach((el)=>{
         if(el.name.includes(argu.target.value.toString())){
@@ -135,7 +136,7 @@ function MainPage() {
         }
       })
       setbtnDisplay({display:'none'})
-      setXbtn({display:"inline"})
+      setXbtn({opacity:'1'})
     }
     
     else{
@@ -145,7 +146,7 @@ function MainPage() {
         setPkData((pkdata)=>[...pkdata,poke[i]])
       }
       setbtnDisplay({display:'flex'})
-      setXbtn({display:"none"})
+      setXbtn({opacity:'0'})
     }
   }
 
@@ -155,7 +156,7 @@ function MainPage() {
       setPkData((pkdata)=>[...pkdata,poke[i]])
     }
     setbtnDisplay({display:'flex'})
-    setXbtn({display:"none"})
+    setXbtn({opacity:'0'})
   }
   return (
     <>
@@ -344,7 +345,7 @@ function MainPage() {
         {pkdata?.map((element) => (
           <div key={element.id} className="Card">
             <Link to={"/pokemon?id="+element.id}>
-            <p>{element.id}</p>
+            <div className="idDiv" ><p>{element.id}</p></div>
             <img
               src={element.sprites.Other.Official_artwork.Front_default}
               loading="eager"
