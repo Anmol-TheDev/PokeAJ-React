@@ -92,3 +92,9 @@ footer{
     box-shadow: 0px 0px 30px 10px #8b8b8b;
   }
 } 
+.topBtn{
+  color:white;
+  padding:1rem;
+  right:0;
+
+}

@@ -14,7 +14,7 @@ import MainPage from "../component/pokeCard";
   const fun = async () => {
 
     try{
-    let doc =query(collection(db,"pkShortData"),orderBy("id"),limit(1025));
+    let doc =query(collection(db,"pkShortData"),orderBy("id"),limit(100));
     const docRef =  await getDocs(doc);
     docRef.forEach(el=>{
       setdata((data)=>[...data,el.data()])
@@ -38,6 +38,7 @@ return (
   <DataContext.Provider value={data}>
     <MainPage/>
   </DataContext.Provider>
+
   <footer>
     <h3>Developer: AJ</h3>
     <div>
@@ -45,8 +46,8 @@ return (
       <a id="email" target="_blank" href="mailto:ajlagend06@gmail.com"><i class="fa-solid fa-at"></i></a>
       <a target="_blank" href="https://github.com/matrixAJ27"><i id="git" className="fa-brands fa-github"></i></a>
     </div>
-
   </footer>
+
   </>
   );
 }
