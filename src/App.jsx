@@ -3,13 +3,14 @@ import { db } from "../firebase/database";
 import "./App.css";
 import { useEffect, useState,createContext } from "react";
 import MainPage from "../component/pokeCard";
+import { useNavigate } from "react-router-dom";
 
  export const DataContext =createContext();
  function App() {
  const [data,setdata]=useState([]);
  const [preloaderDisplay,setpreloaderDisplay]=useState({display:'flex'})
   //function for storing all pokeData
-
+  
   useEffect(()=>{
   const fun = async () => {
 
@@ -18,10 +19,8 @@ import MainPage from "../component/pokeCard";
     const docRef =  await getDocs(doc);
     docRef.forEach(el=>{
       setdata((data)=>[...data,el.data()])
-    })
-    if(data){
       setpreloaderDisplay({display:'none'})
-    }
+    })
     } catch(err){
       console.log(err)
     }
@@ -30,6 +29,7 @@ import MainPage from "../component/pokeCard";
  fun();
 
 },[])
+
 return (
   <>
   <div className="preloader" style={preloaderDisplay} >

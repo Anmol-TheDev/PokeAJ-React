@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import "./pokeDetail.css";
 
 const PokeDetail = () => {
@@ -10,7 +10,7 @@ const PokeDetail = () => {
   let [img, setImg] = useState();
   const [mainImgUrl, setMainImgUrl] = useState();
   const [index,setIndex]=useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch(url)
       .then((res) => res.json())
@@ -33,9 +33,16 @@ const PokeDetail = () => {
   if (!Data) {
     return <div>Loadding</div>;
   }
+  const backBtn =()=>{
+      navigate(-1);
+      
+  }
   return (
     <div className="container">
+  
+      <button onClick={backBtn}><i class="fa-solid fa-arrow-left"></i></button>
       <h1>{Data.name}</h1>
+
       <div className="images">
         <div className="mainImg">
           <img src={mainImgUrl} alt="Img" />

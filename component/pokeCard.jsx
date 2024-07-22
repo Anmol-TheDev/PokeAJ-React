@@ -3,7 +3,7 @@ import "./pokeCard.css";
 import { DataContext } from "../src/App";
 import { Divide as Hamburger } from "hamburger-react";
 import video from './videoplayback.webm'
-import { Link } from "react-router-dom";
+import { Link, useParams, useSearchParams } from "react-router-dom";
 function MainPage() {
   const poke = useContext(DataContext);
   const [pkdata, setPkData] = useState([]);
@@ -13,34 +13,36 @@ function MainPage() {
   const [sideBar, setSideBar] = useState({});
   const [btnDisplay,setbtnDisplay]= useState({display:'flex'});
   const [Xbtn,setXbtn] = useState({opacity:'0'});
+  
   //NextButton
   const NestBtn = () => {
     setStartVal(StartVal + 20);
     setEndVal(EndVal + 20);
     window.scrollTo(0, 0);
   };
+  
   //previousButton
   const PreviousBtn = () => {
     setStartVal(StartVal - 20);
     setEndVal(EndVal - 20);
     window.scrollTo(0, 0);
   };
+  
   // style for filters li tag
   function filterStyle(el) {
     const style = {
       color: el,
       width: "67px",
-      
     };
     return style;
   }
-
+  
   useEffect(() => {
     if (poke) {
       setPkData([]);
       poke.forEach((element) => {
         if (element.id > StartVal && element.id <= EndVal) {
-          setPkData((pkdata) => [...pkdata, element]);
+         setPkData((pkdata) => [...pkdata, element]);
         }
       });
     }
@@ -51,7 +53,6 @@ function MainPage() {
       setDisplay("block");
     }
   }, [poke, StartVal, EndVal]);
-console.log(poke)
   const TypeBg = (argu) => {
     switch (argu) { 
       case "normal":

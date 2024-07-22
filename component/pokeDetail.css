@@ -11,6 +11,14 @@
     }
     user-select: none;
 }
+button{
+    font-size:25px;
+    background-color:transparent;
+    border:none;
+    color:#cfdfef;
+    align-self:start;
+    margin:15px 0 0 15px;
+}
 .images{
     display: flex;
     justify-content:center;
