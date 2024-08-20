@@ -15,7 +15,7 @@ import { useNavigate } from "react-router-dom";
   const fun = async () => {
 
     try{
-    let doc =query(collection(db,"pkShortData"),orderBy("id"),limit(100));
+    let doc =query(collection(db,"pkShortData"),orderBy("id"),limit(1025));
     const docRef =  await getDocs(doc);
     docRef.forEach(el=>{
       setdata((data)=>[...data,el.data()])
